@@ -14,8 +14,4 @@ class TenDayForecast
   def ten_day
     @response["forecast"]["period"]["fcttext"]
   end
-
-
-
-
 end

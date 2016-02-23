@@ -3,13 +3,8 @@ require 'httparty'
 class SunriseSunset
 
   def initialize(zip)
-    @zip = zip
-    @response = get_response
-  end
+    @response = HTTParty.get("http://api.wunderground.com/api/#{ENV["WUNDERGROUND_KEY"]}/sunrise_sunset/q/#{zip}.json"))
 
-  def get_response
-    key = ENV['WUNDERGROUND_KEY']
-    HTTParty.get("http://api.wunderground.com/api/#{key}/astronomy/q/#{@zip}.json")
   end
 
   def SunriseSunset
